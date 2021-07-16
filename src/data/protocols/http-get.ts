@@ -1,9 +1,9 @@
 
-export type Params = {
+export type HttpGetParams = {
   url: string
   params: object
 }
 
 export interface HttpGetClient {
-  get: <T = any> (params: Params) => Promise<T>
+  get: <T = any> (params: HttpGetParams) => Promise<T>
 }
