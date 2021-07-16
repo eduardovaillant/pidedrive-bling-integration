@@ -1,9 +1,8 @@
 node_modules
 dist
 coverage
-.env
 data
 !src/data
 !tests/data
-globalConfig.json
 .vscode
+globalConfig.json
