@@ -1,7 +1,7 @@
 import { GetPipedriveDeal, HttpGet } from '@/data/protocols'
 import env from '@/main/config/env'
 
-export class PipeDriveClient implements GetPipedriveDeal {
+export class PipedriveClient implements GetPipedriveDeal {
   constructor (
     private readonly httpGet: HttpGet
   ) {}
