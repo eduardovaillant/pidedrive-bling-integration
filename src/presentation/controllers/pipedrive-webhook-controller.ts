@@ -13,11 +13,15 @@ export class PipedriveWebhookController implements Controller {
       const body = httpRequest.body
 
       if (body.current.status === 'won') {
+        console.log(body.current)
+
         const order: OrderModel = {
           clientName: body.current.person_name,
           productCount: body.current.products_count,
           totalValue: body.current.value
         }
+
+        console.log(order)
 
         await this.addOrder.add(order)
       }
