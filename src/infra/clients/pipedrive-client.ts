@@ -8,12 +8,11 @@ export class PipedriveClient implements GetPipedriveDeal {
 
   async get (id: number): Promise<any> {
     const response = await this.httpGet.get({
-      url: env.pipedriveBaseURL + 'deals/1/?api_token=27ca3408e6f2fbecd49138f0413bc3b57617d060',
+      url: env.pipedriveBaseURL + `deals/${id}/?api_token=${env.pipedriveToken}`,
       params: {
-        id: 1
+        id
       }
     })
-    console.log(response.data)
     return response
   }
 }
