@@ -7,7 +7,6 @@ export class AddOrderService implements AddOrder {
   ) {}
 
   async add (dealId: number): Promise<void> {
-    const deal = await this.getPipedriveDeal.get(dealId)
-    console.log(deal)
+    await this.getPipedriveDeal.get(dealId)
   }
 }

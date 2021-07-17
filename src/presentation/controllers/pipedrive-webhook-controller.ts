@@ -10,6 +10,7 @@ export class PipedriveWebhookController implements Controller {
   async handle (httpRequest: HttpRequest): Promise<HttpResponse> {
     try {
       const body = httpRequest.body
+      console.log(body.current)
       await this.addOrder.add(body.meta.id)
       return ok('')
     } catch (error) {
