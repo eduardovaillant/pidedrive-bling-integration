@@ -1,6 +1,6 @@
-import { Order } from '@/domain/models/order'
+import { OrderModel } from '@/domain/models/order'
 
-export const blingOrderXmlHelper = (order: Order): string => {
+export const blingOrderXmlHelper = (order: OrderModel): string => {
   const xml = `
   <?xml version="1.0" encoding="UTF-8"?>
   <pedido>
@@ -13,7 +13,7 @@ export const blingOrderXmlHelper = (order: Order): string => {
   <descricao>Produto Teste</descricao>
   <un>Pç</un>
   <qtde>${order.productCount}</qtde>
-  <vlr_unit>${order.product.unitValue}</vlr_unit>
+  <vlr_unit>100</vlr_unit>
   </item>
   </itens>
   <parcelas>

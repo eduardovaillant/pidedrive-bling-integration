@@ -1,6 +1,7 @@
 import { Controller, HttpRequest, HttpResponse } from '@/presentation/protocols'
 import { ok, serverError } from '@/presentation/helpers'
 import { AddOrder } from '@/domain/usecases'
+import { OrderModel } from '@/domain/models'
 
 export class PipedriveWebhookController implements Controller {
   constructor (
@@ -10,8 +11,17 @@ export class PipedriveWebhookController implements Controller {
   async handle (httpRequest: HttpRequest): Promise<HttpResponse> {
     try {
       const body = httpRequest.body
-      console.log(body.current)
-      await this.addOrder.add(body.meta.id)
+
+      if (body.current.status === 'won') {
+        const order: OrderModel = {
+          clientName: body.current.person_name,
+          productCount: body.current.products_count,
+          totalValue: body.current.value
+        }
+
+        await this.addOrder.add(order)
+      }
+
       return ok('')
     } catch (error) {
       console.error(error)

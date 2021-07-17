@@ -1,3 +1,5 @@
+import { OrderModel } from '@/domain/models'
+
 export interface AddOrder {
-  add: (dealId: number) => Promise<void>
+  add: (order: OrderModel) => Promise<void>
 }

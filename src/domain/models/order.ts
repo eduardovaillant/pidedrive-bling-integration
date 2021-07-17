@@ -1,8 +1,5 @@
-import { Product } from './product'
-
-export interface Order {
+export interface OrderModel {
   clientName: string
-  product: Product
   productCount: number
   totalValue: number
 }
