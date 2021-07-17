@@ -1,8 +1,7 @@
-import { AddOrderService } from '@/data/services/add-order-service'
-import { PipedriveWebhookController } from '@/presentation/controllers'
 import { Controller } from '@/presentation/protocols'
-import { AxiosHttpClient, PipedriveClient } from '@/infra/clients'
-import { BlingClient } from '@/infra/clients/bling-client'
+import { PipedriveWebhookController } from '@/presentation/controllers'
+import { AddOrderService } from '@/data/services'
+import { AxiosHttpClient, PipedriveClient , BlingClient } from '@/infra/clients'
 
 export const makePipedriveWebhookController = (): Controller => {
   const axiosClient = new AxiosHttpClient()
