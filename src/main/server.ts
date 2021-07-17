@@ -2,7 +2,7 @@ import 'module-alias/register'
 import env from '@/main/config/env'
 import { MongoHelper } from '@/infra/db'
 import { PipeDriveClient } from '@/infra/clients/pipedrive-client'
-import { AxiosHttpClient } from '@/infra/http'
+import { AxiosHttpClient } from '@/infra/clients'
 
 MongoHelper.connect(env.mongoUrl)
   .then(async () => {
