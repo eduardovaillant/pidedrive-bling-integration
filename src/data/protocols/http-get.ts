@@ -1,4 +1,3 @@
-
 export type HttpGetParams = {
   url: string
   params: object
