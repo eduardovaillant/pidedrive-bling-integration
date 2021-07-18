@@ -11,10 +11,10 @@ export class BlingCreateOrderSpy implements BlingCreateOrder {
 
 export class HttpPostSpy implements HttpPost {
   params: HttpPostParams
-  result: any = null
+  response: any = null
 
   async post (params: HttpPostParams): Promise<any> {
     this.params = params
-    return this.result
+    return this.response
   }
 }
