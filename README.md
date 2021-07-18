@@ -14,7 +14,7 @@ Base URL = http://18.231.122.132:3000/api/
 ## Responses
 
 ### Listagem de todos os registros
-#### `200`
+### `200`
 ```json
 {
   "data": [
@@ -46,7 +46,7 @@ Base URL = http://18.231.122.132:3000/api/
 ```
 
 ### Erros
-#### `500` - Internal Server Error
+### `500` - Internal Server Error
 ```json
 {
   "error": "InternalServerError",
