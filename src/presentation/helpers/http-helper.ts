@@ -10,6 +10,15 @@ export const ok = (data: any): HttpResponse => (
   }
 )
 
+export const notFound = (): HttpResponse => (
+  {
+    statusCode: 404,
+    body: {
+      detail: 'Not found'
+    }
+  }
+)
+
 export const serverError = (error: Error): HttpResponse => (
   {
     statusCode: 500,
