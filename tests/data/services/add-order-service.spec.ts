@@ -34,6 +34,13 @@ describe('AddOrderService', () => {
     await expect(promise).rejects.toThrow()
   })
 
+  test('should throw if Bling response status is diferent than 201', async () => {
+    const { sut, blingCreateOrderSpy } = makeSut()
+    blingCreateOrderSpy.postResponse = { status: 200 }
+    const promise = sut.add(mockOrderModel())
+    await expect(promise).rejects.toThrow()
+  })
+
   test('should call AddOrderRegistryRepository with correct values', async () => {
     const { sut, addOrderRegistryRepositorySpy } = makeSut()
     await sut.add(mockOrderModel())
