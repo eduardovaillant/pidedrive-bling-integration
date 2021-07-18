@@ -1,6 +1,7 @@
 # Pipedrive-Bling Integration
 
 ## Descrição
+> A integração deve buscar as oportunidades com status igual a ganho no Pipedrive, depois inseri-las como pedido no Bling
 
 ## Endpoints
 
@@ -23,7 +24,7 @@ Base URL = http://18.231.122.132:3000/api/
     {
       "id": ObjectID,
       "date": string,
-      "valud": number
+      "value": number
     }
   ]
 }
@@ -36,7 +37,7 @@ Base URL = http://18.231.122.132:3000/api/
   "data": {
       "id": ObjectID,
       "date": string,
-      "valud": number
+      "value": number
     }  
 }
 ```
