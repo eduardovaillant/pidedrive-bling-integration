@@ -27,7 +27,7 @@ Base URL = http://18.231.122.132:3000/api/
     }
   ]
 }
-
+```
 ## Busca de um registro por data
 
 ### `200`
@@ -39,6 +39,7 @@ Base URL = http://18.231.122.132:3000/api/
       "valud": number
     }  
 }
+```
 
 ### `404` - Not Found
 ```json
@@ -52,6 +53,6 @@ Base URL = http://18.231.122.132:3000/api/
 ```json
 {
   "error": "InternalServerError",
-  "detail": "Message"
+  "detail": string
 }
 ```
