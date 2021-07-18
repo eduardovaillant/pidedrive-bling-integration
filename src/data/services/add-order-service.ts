@@ -9,7 +9,10 @@ export class AddOrderService implements AddOrder {
   ) {}
 
   async add (order: OrderModel): Promise<void> {
-    await this.blingCreateOrder.create(order)
+    const response = await this.blingCreateOrder.create(order)
+    if (response.status !== 201) {
+      throw new Error('Bling Error')
+    }
     await this.addOrderRegistryRepository.add(order.totalValue)
   }
 }
