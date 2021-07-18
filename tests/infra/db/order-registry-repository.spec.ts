@@ -63,4 +63,20 @@ describe('OrderRegistryRepository', () => {
       expect(registries[0].id).toEqual(orderRegistry._id)
     })
   })
+
+  describe('load()', () => {
+    test('should return an null if no registry was found', async () => {
+      const sut = makeSut()
+      const registry = await sut.loadByDate('2021-07-18')
+      expect(registry).toBeFalsy()
+    })
+
+    test('should return a OrderRegistry on success', async () => {
+      const sut = makeSut()
+      await orderRegistriesCollection.insertOne({ date: new Date().toISOString().split('T')[0], value: 100 })
+      const orderRegistry = await orderRegistriesCollection.findOne({ date: new Date().toISOString().split('T')[0] })
+      const registry = await sut.loadByDate('2021-07-18')
+      expect(registry.id).toEqual(orderRegistry._id)
+    })
+  })
 })
