@@ -1,5 +1,5 @@
 import { OrderModel, OrderRegistryModel } from '@/domain/models'
-import { AddOrder, LoadOrderRegistries } from '@/domain/usecases'
+import { AddOrder, LoadOrderRegistries, LoadOrderRegistryByDate } from '@/domain/usecases'
 import { mockOrderRegistryModel } from '@/tests/domain/mocks/order'
 
 export class AddOrderSpy implements AddOrder {
@@ -15,5 +15,15 @@ export class LoadOrderRegistriesSpy implements LoadOrderRegistries {
 
   async load (): Promise<OrderRegistryModel[]> {
     return this.registries
+  }
+}
+
+export class LoadOrderRegistryByDateSpy implements LoadOrderRegistryByDate {
+  registry: OrderRegistryModel = mockOrderRegistryModel()
+  date: string
+
+  async loadByDate (date: string): Promise<OrderRegistryModel> {
+    this.date = date
+    return this.registry
   }
 }
