@@ -2,7 +2,8 @@
 
 ## Descrição
 > A integração deve buscar as oportunidades com status igual a ganho no Pipedrive, depois inseri-las como pedido no Bling
-Para efetuar essa integração, criei um webhook na pipedrive (https://pipedrive.readme.io/docs/guide-for-webhooks?ref=api_reference), que faz uma chamada no endpoint /pipedrive-webhook da API desenvolvida sempre que um negócio é atualizado e dispara o processo de criação de um novo pedido na Bling.
+
+Para efetuar essa integração, criei um webhook na pipedrive (https://pipedrive.readme.io/docs/guide-for-webhooks?ref=api_reference), que faz uma chamada no endpoint /pipedrive-webhook da API desenvolvida sempre que um negócio é atualizado.
 
 ## Endpoints
 
