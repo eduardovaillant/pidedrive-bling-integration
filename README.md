@@ -20,7 +20,7 @@ Base URL = http://18.231.122.132:3000/api/
 ## Responses
 
 ## Listagem de todos os registros
-### `200`
+### `200` - Success
 ```json
 {
   "data": [
@@ -34,7 +34,7 @@ Base URL = http://18.231.122.132:3000/api/
 ```
 ## Busca por um registro de uma determinada data
 
-### `200`
+### `200` - Success
 ```json
 {
   "data": {
