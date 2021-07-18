@@ -1,3 +1,5 @@
+import { OrderModel } from '@/domain/models'
+
 export interface BlingCreateOrder {
-  create: (order: any) => Promise<any>
+  create: (order: OrderModel) => Promise<any>
 }
